@@ -22,7 +22,7 @@ jobs:
       - name: Stop previous Container
         run: |
           docker stop docker-ci-cd || true
-          docker rm dockerd-ci-cd || true
+          docker rm docker-ci-cd || true
 
       - name: Run new Container
         run: |
