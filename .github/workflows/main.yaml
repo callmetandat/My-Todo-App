@@ -1,0 +1,22 @@
+name: Continous Deploy Docker Container on main branch
+
+on: 
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Pull image from Docker Hub
+        run: docker pull tandat1508/my-todo-app:latest
+
+      - name: Stop previous Container
+        run: |
+          docker stop docker-ci-cd || true
+          docker rm dockerd-ci-cd || true
+
+      - name: Run new Container
+        run: |
+          docker run -d --name docker-ci-cd -p 3000:3000 tandat1508/my-todo-app:latest
