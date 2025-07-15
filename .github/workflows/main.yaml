@@ -9,6 +9,13 @@ jobs:
     runs-on: self-hosted
 
     steps:
+
+      - name: Debug info
+        run: |
+          whoami
+          id
+          groups
+
       - name: Pull image from Docker Hub
         run: docker pull tandat1508/my-todo-app:latest
 
