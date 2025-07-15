@@ -26,4 +26,4 @@ jobs:
 
       - name: Run new Container
         run: |
-          docker run -d --name docker-ci-cd -p 3000:3000 tandat1508/my-todo-app:latest
+          docker run -d --name docker-ci-cd -p 4567:4567 tandat1508/my-todo-app:latest

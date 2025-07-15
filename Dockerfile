@@ -11,7 +11,7 @@ COPY . .
 RUN npm install
 
 # Expose port (tuỳ thuộc vào ứng dụng, thường là 3000)
-EXPOSE 3000
+EXPOSE 4567
 
 # Lệnh khởi chạy ứng dụng
 CMD ["node", "index.js"]
